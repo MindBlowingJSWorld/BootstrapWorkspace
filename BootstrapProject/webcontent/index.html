@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!--You should not use the ng-app directive when manually bootstrapping your app.-->
+<!--<html ng-app="bootstrapApp" ng-strict-di>-->
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Simple Bootstrap Demo</title>
+	<!-- Add all css files -->
+	<link rel="stylesheet" href="lib/bootstrap-3.3.4/css/bootstrap.css">
+	<link rel="stylesheet" href="lib/bootstrap-3.3.4/css/bootstrap-theme.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/quickStart.css">
+
+
+	<script type="text/javascript" src="./lib/angular/angular.js"></script>
+	<script type="text/javascript" src="./lib/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="lib/jquery/dist/jquery.js"></script>
+	<script type="text/javascript" src="./lib/bootstrap-3.3.4/js/bootstrap.js"></script>
+	<script type="text/javascript" src="./lib/responsives/respond.min.js"></script>
+	<script type="text/javascript" src="./lib/responsives/html5shiv.min.js"></script>
+	
+	<script type="text/javascript">
+		var bootstrapApp = angular.module('bootstrapApp', ['ngRoute']);
+	</script>
+	
+	<!-- Add all controllers -->
+	<script type="text/javascript" src="./js/controllers/quickStartController.js"></script>
+	<script type="text/javascript" src="./js/controllers/customerInfo.js"></script>
+
+	<!-- Directives -->
+	<script type="text/javascript" src="./js/directives/copyright.js"></script>
+	<script type="text/javascript" src="./js/directives/customerDetails.js"></script>
+
+
+	<!-- Add all the routers -->
+	<script type="text/javascript" src="./js/routes.js"></script>
+
+
+	<script>
+
+        /** Initializing Bootstrap **/
+        angular.element(document).ready(function() {
+            angular.bootstrap(document, ['bootstrapApp']);
+        });
+
+	</script>
+
+</head>
+<body>
+    <div class="container-fluid">
+            <ng-view></ng-view>
+    </div>
+</body>
+</html>
